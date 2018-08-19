@@ -132,20 +132,18 @@ export class SpecGenerateUtil {
 
         if (epProd) {
           if (isEndpointClassType(epProd)) {
-            if (epProd.type.__id) {
-              const epProduces = this.processSchema(epProd.type, definitions);
-              if (epProduces) {
-                const ref: Schema = { $ref: `${DEFINITION}/${epProduces}` };
-                responses[200] = {
-                  description: definitions[epProduces!].description || '',
-                  schema: epProd!.wrapper !== Array ? ref : { type: 'array', items: ref }
-                };
-                produces.push(MimeType.JSON);
-              } else {
-                responses[201] = {
-                  description: ''
-                };
-              }
+            const epProduces = this.processSchema(epProd.type, definitions);
+            if (epProduces) {
+              const ref: Schema = { $ref: `${DEFINITION}/${epProduces}` };
+              responses[200] = {
+                description: definitions[epProduces!].description || '',
+                schema: epProd!.wrapper !== Array ? ref : { type: 'array', items: ref }
+              };
+              produces.push(MimeType.JSON);
+            } else {
+              responses[201] = {
+                description: ''
+              };
             }
           } else {
             produces.push(epProd.mime);
