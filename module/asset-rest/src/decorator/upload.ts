@@ -1,3 +1,5 @@
+/// <reference path="../typings.d.ts" />
+
 import { ControllerRegistry, Filter, EndpointDecorator, Request, Response, MimeType } from '@travetto/rest';
 import { Class } from '@travetto/registry';
 import { ConfigLoader } from '@travetto/config';
