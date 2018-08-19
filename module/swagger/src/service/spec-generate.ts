@@ -5,7 +5,7 @@ import { SchemaRegistry, DEFAULT_VIEW } from '@travetto/schema';
 import { Spec, Parameter, Path, Response, Schema, Operation } from '../types';
 
 export function isEndpointClassType(o: any): o is EndpointClassType {
-  return !!o && !!o.__id;
+  return !!o && !o.mime;
 }
 
 const DEFINITION = '#/definitions';

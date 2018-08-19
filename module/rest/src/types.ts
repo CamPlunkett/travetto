@@ -16,7 +16,7 @@ export interface ParamConfig {
   name: string;
   description?: string;
   required?: boolean;
-  location: 'params' | 'query' | 'body';
+  location: 'path' | 'query' | 'body';
   type?: Class;
 }
 
