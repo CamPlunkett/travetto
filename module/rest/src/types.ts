@@ -28,11 +28,18 @@ interface CoreConfig {
   headers: HeaderMap;
 }
 
-export interface EndpointIOType {
+export interface EndpointClassType {
   type: Class;
   wrapper?: Class;
   description?: string;
 }
+
+export interface EndpointSimpleType {
+  mime: string;
+  type: string;
+}
+
+export type EndpointIOType = EndpointClassType | EndpointSimpleType;
 
 export interface EndpointConfig extends CoreConfig, DescribableConfig {
   id: string;
