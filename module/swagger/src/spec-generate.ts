@@ -204,8 +204,10 @@ export class SpecGenerateUtil {
 
         const epPath = !ep.path ? '/' : typeof ep.path === 'string' ? (ep.path as string) : (ep.path as RegExp).source;
 
-        paths[`${ctrl.basePath}${epPath}`.replace(/[\/]+/g, '/')] = {
-          ...paths[epPath] || {},
+        const key = `${ctrl.basePath}${epPath}`.replace(/[\/]+/g, '/');
+
+        paths[key] = {
+          ...(paths[key] || {}),
           [ep.method!]: {
             tags: [tagName],
             produces,
