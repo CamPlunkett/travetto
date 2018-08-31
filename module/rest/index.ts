@@ -14,3 +14,4 @@ export * from './src/response/string';
 export * from './src/service';
 export * from './src/interceptor';
 export * from './src/types';
+export * from './src/util/mime';
