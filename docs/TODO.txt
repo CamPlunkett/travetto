@@ -1,5 +1,13 @@
 In-Progress
 ==============
+? Test catastrophic errors need to propagate
+  X Updated test plugin
+  X use Env.error when possible
+  X force pieces through the shutdown process
+  X Handle exit locations in the CLI (test/run)
+  X Expose compilation errors
+  X Expose transpilation errors
+
 ? Yeoman Generator
   X Generate Rest app
   X Generate Model app
@@ -27,7 +35,6 @@ Tests
 
 To Do
 ==============
-- Test catastrophic erros need to propagate
 
 - Lambda for Handlers
   - Kinesis/S3 Endpoint
